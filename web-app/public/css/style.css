@@ -1,0 +1,170 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #ffdfe9;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.6) 2px, transparent 2px);
+    background-size: 30px 30px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Kalkulator */
+.kalkulator-box {
+    background: #fff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(233, 91, 138, 0.08);
+    width: 100%;
+    max-width: 420px;
+}
+
+.kalkulator-box h2 {
+    text-align: center;
+    color: #9c2455;
+    font-size: 26px;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.kalkulator-box label {
+    display: block;
+    font-size: 15px;
+    color: #b84670;
+    margin: 16px 0 6px;
+    font-weight: 500;
+}
+
+.kalkulator-box input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1px solid #f8d7e3;
+    border-radius: 8px;
+    background: #fff9fb;
+    outline: none;
+    transition: 0.3s;
+}
+
+.kalkulator-box input[type="text"]:focus {
+    border-color: #e95b8a;
+    background: #fff;
+}
+
+.kalkulator-box p {
+    font-size: 16px;
+    color: #b84670;
+    background: #fff0f6;
+    padding: 14px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 22px 0;
+    font-weight: 500;
+}
+
+.kalkulator-box button {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(90deg, #f4729f, #ec407a);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.kalkulator-box button:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+/* Daftar Mahasiswa */
+.container {
+    background: #fff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(233, 91, 138, 0.08);
+    width: 100%;
+    max-width: 650px;
+}
+
+.container h2 {
+    text-align: center;
+    color: #9c2455;
+    font-size: 30px;
+    font-weight: 1000;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+th {
+    background: linear-gradient(90deg, #f4729f, #ec407a);
+    color: #fff;
+    padding: 15px 18px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+td {
+    padding: 15px 18px;
+    border-bottom: 1px solid #ffeaf3;
+    font-size: 15px;
+    color: #33222b;
+    background: #fff9fb;
+    text-align: center;
+}
+
+td:first-child {
+    font-weight: 600;
+    color: #22111a;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.badge-l {
+    background: #e0f0ff;
+    color: #2b6cb0;
+}
+
+.badge-p {
+    background: #ffe4ec;
+    color: #c24872;
+}
+
+tbody tr:hover td {
+    background: #fff0f5;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
