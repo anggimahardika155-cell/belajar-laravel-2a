@@ -8,6 +8,7 @@ use App\Http\Controllers\KalkulatorController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\KalkulatorSegitigaController;
 
+
 //  1. Route Dasar
 Route::get('/', function () {
     return "Hallo namaku adalah Anggi, Salam Kenal";
@@ -41,3 +42,7 @@ Route::get('/daftar/mahasiswa', [MahasiswaController::class, 'index']);
 //  8. Route Kalkulator Segitiga
 Route::get('/kalkulator/segitiga', [KalkulatorSegitigaController::class, 'segitiga']);
 Route::post('/kalkulator/segitiga/proses', [KalkulatorSegitigaController::class, 'prosesSegitiga']);
+
+//  9. route ke controller Dashboard home
+Route::get('/dashboard',[DashboardController::class, 'home']);
+Route::get('/gallery',[DashboardController::class,'gallery']);
