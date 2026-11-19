@@ -4,6 +4,15 @@
 <!-- bagian konten utama -->
 @section('content') 
     <h1>{{ $judul }}</h1>
+        <!-- Tombol Tambah Data Baru -->
+    <a href="/employe/create"><button>Tambah Data Baru</button></a>
+    <br><br>
+
+    <!-- Pesan Notifikasi Setelah Simpan -->
+    @if(session('pesan'))
+        <p style="color: green; font-weight: bold;">{{ session('pesan') }}</p>
+    @endif
+
     <!-- tabel untuk menampilkan data -->
     <table border="1" align="center">
         <tr>
