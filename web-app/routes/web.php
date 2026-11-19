@@ -58,3 +58,10 @@ Route::get('/employe/create', [EmployeController::class, 'create']);
 
 // menyimpan data baru
 Route::post('/employe', [EmployeController::class, 'store']);
+
+// 12. menampilkan form ubah data
+Route::get('/employe/{id}/edit', [EmployeController::class, 'edit']);
+
+// menyimpan perubahan data
+Route::put('/employe/{id}', [EmployeController::class, 'update']);
+
