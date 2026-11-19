@@ -6,12 +6,22 @@ use Illuminate\Http\Request;
 
 class EmployeController extends Controller
 { 
-    // fungsi untuk menampilkan semua data pegawai
-    public function index(){ 
-        $data['judul'] = 'CRUD Data Pegawai'; 
-        $data['employes'] = Employe::all();  
-        return view('tampil_data',$data); 
-    } 
+        public function index(Request $request)
+    {
+        $data['judul'] = 'Data Pegawai';
+
+        if ($request->has('cari')) {
+            // Jika ada yang dicari
+            $data['employes'] = Employe::where('nama', 'like', '%' . $request->cari . '%')
+                ->orWhere('alamat', 'like', '%' . $request->cari . '%')
+                ->get();
+        } else {
+            // Jika tidak ada pencarian, tampil semua
+            $data['employes'] = Employe::all();
+        }
+
+        return view('tampil_data', $data);
+    }
 
     // menampilkan halaman form tambah data
     public function create()
@@ -72,6 +82,17 @@ class EmployeController extends Controller
 
         // kembali ke halaman daftar dengan pesan
         return redirect('/employe')->with('pesan', 'Data berhasil diubah! ✅');
+    }
+
+    // Fungsi Hapus Data
+    public function destroy($id)
+    {
+
+        // Cari data berdasarkan id, lalu hapus dari database
+        Employe::destroy($id);
+        
+        // Kembali ke halaman daftar data + tampilkan pesan notifikasi
+        return redirect('/employe')->with('pesan', 'Data berhasil dihapus! ✅');
     }
 }
 
