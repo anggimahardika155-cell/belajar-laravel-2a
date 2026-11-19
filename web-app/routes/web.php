@@ -52,3 +52,9 @@ use App\Http\Controllers\EmployeController;
 
 // route untuk menampilkan data employe
 Route::get('/employe',[EmployeController::class, 'index']);
+
+// 11. menampilkan form tambah data
+Route::get('/employe/create', [EmployeController::class, 'create']);
+
+// menyimpan data baru
+Route::post('/employe', [EmployeController::class, 'store']);
