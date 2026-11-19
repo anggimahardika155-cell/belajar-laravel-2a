@@ -42,6 +42,36 @@ class EmployeController extends Controller
     // Kembali ke halaman daftar data dengan pesan
         return redirect('/employe')->with('pesan', 'Data berhasil disimpan! ✅');
     }
+    
+        // menampilkan form edit dengan data yang dipilih
+    public function edit($id)
+    {
+        $data['judul'] = 'Ubah Data Pegawai';
+        // cari data berdasarkan id
+        $data['employe'] = Employe::find($id);
+        return view('edit_data', $data);
+    }
 
+    // menyimpan perubahan ke database
+    public function update(Request $request, $id)
+    {
+        // validasi data
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'gaji' => 'required'
+        ]);
+
+        // cari data lalu ubah
+        Employe::find($id)->update([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'gender' => $request->gender,
+            'gaji' => $request->gaji
+        ]);
+
+        // kembali ke halaman daftar dengan pesan
+        return redirect('/employe')->with('pesan', 'Data berhasil diubah! ✅');
+    }
 }
 
