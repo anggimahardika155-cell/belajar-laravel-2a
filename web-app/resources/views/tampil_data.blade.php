@@ -4,6 +4,17 @@
 <!-- bagian konten utama -->
 @section('content') 
     <h1>{{ $judul }}</h1>
+        <!-- Form Pencarian -->
+    <form action="/employe" method="get">
+        <input type="text" name="cari" placeholder="Cari nama atau alamat..." 
+        value="{{ request('cari') }}">
+        <button type="submit">Cari</button>
+        @if(request('cari'))
+            <a href="/employe"><button type="button">Reset</button></a>
+        @endif
+    </form>
+    <br>
+
         <!-- Tombol Tambah Data Baru -->
     <a href="/employe/create"><button>Tambah Data Baru</button></a>
     <br><br>
@@ -34,7 +45,11 @@
             <td>
                 <a href="/employe/{{ $row->id }}/edit"><button>Edit</button></a>
                 |
-                <button>Delete</button>
+                <form action="/employe/{{ $row->id }}" method="post" style="display: inline;">
+                     @csrf
+                     @method('DELETE')
+                    <button type="submit" onclick="return confirm('Yakin mau dihapus?')">Hapus</button>
+                </form>
             </td>
         </tr>
         @endforeach 
