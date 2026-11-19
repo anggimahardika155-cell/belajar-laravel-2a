@@ -65,3 +65,6 @@ Route::get('/employe/{id}/edit', [EmployeController::class, 'edit']);
 // menyimpan perubahan data
 Route::put('/employe/{id}', [EmployeController::class, 'update']);
 
+// 13. Route Hapus Data: terima permintaan hapus berdasarkan id
+Route::delete('/employe/{id}', [EmployeController::class, 'destroy']);
+
