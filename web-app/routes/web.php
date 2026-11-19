@@ -46,3 +46,9 @@ Route::post('/kalkulator/segitiga/proses', [KalkulatorSegitigaController::class,
 //  9. route ke controller Dashboard home
 Route::get('/dashboard',[DashboardController::class, 'home']);
 Route::get('/gallery',[DashboardController::class,'gallery']);
+ 
+// 10 Route memanggil controller EmployeController
+use App\Http\Controllers\EmployeController;
+
+// route untuk menampilkan data employe
+Route::get('/employe',[EmployeController::class, 'index']);
