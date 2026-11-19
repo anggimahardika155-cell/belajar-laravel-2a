@@ -32,7 +32,9 @@
             <td>{{ $row->gender }}</td>
             <td>{{ $row->gaji }}</td>
             <td>
-                <button>Edit</button> | <button>Delete</button>
+                <a href="/employe/{{ $row->id }}/edit"><button>Edit</button></a>
+                |
+                <button>Delete</button>
             </td>
         </tr>
         @endforeach 
