@@ -8,4 +8,7 @@ class Employe extends Model
     protected $table = 'employes'; 
     // menentukan primary key dari tabel
     protected $primaryKey = 'id'; 
+    
+    // kolom yang diizinkan untuk disimpan secara massal
+    protected $fillable = ['nama', 'alamat', 'gender', 'gaji'];
 }
