@@ -1,66 +1,219 @@
-/* pengaturan tampilan badan halaman */
+/* Pengaturan tampilan badan halaman sesuai modul */
 body { 
     font: 16px arial, sans-serif; 
     background-color: lightgray; 
+    margin: 0;
+    padding: 20px 0;
 } 
-/* wadah utama untuk menengahkan konten */
+
+/* Wadah utama untuk menengahkan konten */
 .container { 
-    width: 800px; 
+    width: 880px; 
     margin: auto; 
     background-color: white; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 } 
-/* bagian header halaman */
+
+/* Bagian header halaman */
 .header { 
-    padding-top: 20px; 
-    padding-right: 20px; 
-    padding-left: 20px; 
+    padding: 20px 20px 10px 20px; 
 } 
+
 .header .judul { 
-    font-size: 40px; 
+    font-size: 38px; 
     font-weight: bold; 
-    margin-bottom: 5px; 
+    margin: 0 0 5px 0;
+    color: #111;
 } 
-/* bagian gambar spanduk */
+
+/* Bagian gambar spanduk sesuai modul */
 .banner { 
-    height: 200px;
-    background-image: url(https://picsum.photos/200); 
+    height: 180px;
+    background-image: url(https://picsum.photos/880/180); 
     background-size: cover; 
+    background-position: center;
     border-top: 5px solid navy; 
     border-bottom: 5px solid skyblue; 
 } 
-/* wadah untuk sidebar dan konten */
+
+/* Wadah untuk sidebar dan konten */
 .isi { 
     display: flex; 
     margin: 5px; 
+    min-height: 480px;
 } 
-/* bagian menu samping */
+
+/* Bagian menu samping */
 .sidebar { 
-    width: 10rem; 
-    height: 60vh; 
+    width: 10.5rem; 
     border: 0.5px solid navy; 
     background-color: navy; 
-    padding: 10px; 
+    padding: 15px 10px; 
+    flex-shrink: 0;
 } 
-/* bagian konten utama */
+
+/* Bagian konten utama */
 .content { 
     margin-left: 5px; 
-    width: 100vh; 
-    height: 100%; 
-    padding-top: 10px; 
-    padding-left: 10px; 
-    padding-right: 5px; 
+    flex: 1; 
+    min-width: 0;
+    padding: 15px 20px; 
     border: 0.5px solid skyblue; 
+    background-color: #ffffff;
 } 
-/* pengaturan daftar navigasi */
+
+.content h1 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+/* Pengaturan daftar navigasi */
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .nav li { 
     list-style: none; 
-    margin-bottom: 10px; 
+    margin-bottom: 8px; 
 } 
+
 .nav li a { 
+    display: block;
     text-decoration: none; 
     color: white; 
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 15px;
+    transition: background-color 0.2s, color 0.2s;
 } 
-.nav li a:hover { 
+
+.nav li a:hover,
+.nav li a.active { 
     background-color: lightblue; 
     color: navy; 
+    font-weight: bold;
+} 
+
+/* Penyempurnaan Tabel Data agar Sesuai Modul tapi Rapi */
+.table-modul {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.table-modul th {
+    background-color: navy;
+    color: white;
+    padding: 10px 8px;
+    text-align: center;
+    border: 1px solid #1a237e;
+    font-weight: bold;
+}
+
+.table-modul td {
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    text-align: center;
+    color: #222;
+    vertical-align: middle;
+}
+
+.table-modul tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.table-modul tbody tr:hover {
+    background-color: #e2e8f0;
+}
+
+/* Tombol Aksi */
+.btn-navy {
+    background-color: navy;
+    color: white;
+    border: 1px solid navy;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.btn-navy:hover {
+    background-color: #000050;
+}
+
+.btn-blue {
+    background-color: #0284c7;
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 14px;
+    display: inline-block;
+}
+.btn-blue:hover {
+    background-color: #0369a1;
+}
+
+.btn-gray {
+    background-color: #e2e8f0;
+    color: #333;
+    border: 1px solid #cbd5e1;
+    padding: 6px 12px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+}
+.btn-gray:hover {
+    background-color: #cbd5e1;
+}
+
+.btn-edit {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: #0284c7;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: normal;
+}
+.btn-edit:hover {
+    background-color: #0369a1;
+}
+
+.btn-delete {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: normal;
+}
+.btn-delete:hover {
+    background-color: #b91c1c;
+}
+
+/* Badge Gender */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.badge-l {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+.badge-p {
+    background-color: #fce7f3;
+    color: #be185d;
 }
