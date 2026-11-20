@@ -33,23 +33,38 @@ class EmployeController extends Controller
     // menyimpan data baru ke database
     public function store(Request $request)
     {
-
-    // Validasi: pastikan kolom wajib diisi
+        // Validasi: pastikan kolom terisi dengan benar & ID unik jika diisi manual
         $request->validate([
+            'id' => 'nullable|numeric|unique:employes,id',
             'nama' => 'required',
             'alamat' => 'required',
-            'gaji' => 'required'
+            'gender' => 'required',
+            'gaji' => 'required|numeric'
+        ], [
+            'id.unique' => 'ID sudah terdaftar di database! Kosongkan kolom ID agar otomatis dibuat oleh sistem.',
+            'id.numeric' => 'ID harus berupa angka!',
+            'nama.required' => 'Nama wajib diisi!',
+            'alamat.required' => 'Alamat wajib diisi!',
+            'gender.required' => 'Jenis kelamin wajib dipilih!',
+            'gaji.required' => 'Gaji wajib diisi!',
+            'gaji.numeric' => 'Gaji harus berupa angka!'
         ]);
 
-    // Simpan data ke tabel employes
-        Employe::create([
+        // Simpan data ke tabel employes
+        $data = [
             'nama' => $request->nama,
             'alamat' => $request->alamat,
             'gender' => $request->gender,
             'gaji' => $request->gaji
-        ]);
+        ];
 
-    // Kembali ke halaman daftar data dengan pesan
+        if ($request->filled('id')) {
+            $data['id'] = $request->id;
+        }
+
+        Employe::create($data);
+
+        // Kembali ke halaman daftar data dengan pesan
         return redirect('/employe')->with('pesan', 'Data berhasil disimpan! ✅');
     }
     
