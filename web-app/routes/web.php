@@ -14,10 +14,10 @@ Route::get('/', function () {
     return "Hallo namaku adalah Anggi, Salam Kenal";
 });
 
-//  2.Route About
-Route::get('/about', function () {
-    return "<h2>Ini adalah laman About</h2>";
-});
+//  2.Route About (Awal Praktikum)
+// Route::get('/about', function () {
+//     return "<h2>Ini adalah laman About</h2>";
+// });
 
 //  3. Route Controller Web
 Route::get('/web', [Web::class, 'home']);
@@ -58,6 +58,7 @@ Route::get('/employe/create', [EmployeController::class, 'create']);
 
 // menyimpan data baru
 Route::post('/employe', [EmployeController::class, 'store']);
+Route::post('/employe/store', [EmployeController::class, 'store']);
 
 // 12. menampilkan form ubah data
 Route::get('/employe/{id}/edit', [EmployeController::class, 'edit']);
