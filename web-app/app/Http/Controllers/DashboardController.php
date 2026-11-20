@@ -7,7 +7,7 @@ class DashboardController extends Controller
 {
     public function home() { 
         $data['judul']='Laman Home'; 
-        $data['isi']='Lorem ipsum dolor sit amet';
+        $data['isi']='Selamat Datang di Web Kami, ini adalah laman Home.';
         return view('home',$data); 
     } 
 
@@ -20,7 +20,9 @@ class DashboardController extends Controller
     }
 
     public function about() {
-        return view('about');
+        $data['judul'] = 'Laman About';
+        $data['isi'] = 'Ini adalah laman About sistem informasi berbasis web menggunakan framework Laravel.';
+        return view('about', $data);
     }
 
     public function gallery(){ 
