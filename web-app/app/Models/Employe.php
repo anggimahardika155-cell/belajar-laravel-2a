@@ -1,14 +1,20 @@
 <?php
-namespace App\Models; 
-use Illuminate\Database\Eloquent\Model; 
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Employe extends Model
-{ 
-    // menentukan nama tabel yang digunakan
-    protected $table = 'employes'; 
-    // menentukan primary key dari tabel
-    protected $primaryKey = 'id'; 
-    
-    // kolom yang diizinkan untuk disimpan secara massal
-    protected $fillable = ['nama', 'alamat', 'gender', 'gaji'];
+{
+    use HasFactory;
+
+    // Nama tabel yang dipakai
+    protected $table = 'employes';
+
+    // Primary key
+    protected $primaryKey = 'id';
+
+    // Kolom yang boleh diisi data
+    protected $fillable = ['id', 'nama', 'alamat', 'gender', 'gaji'];
 }
